@@ -1,0 +1,181 @@
+:root {
+    --available-color: #5ca357;
+    --selected-color: #cfc12f;
+    --occupied-color: #cf2f2f;
+    --button-color: #2c68a4;
+}
+html, body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #1a182b;
+}
+.wrapper {
+    width: 320px;
+    margin: 10px auto 0;
+    background: #242333;
+    border-radius: 5px;
+    border: 2px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.dates-wrap {
+    font-size: 23px;
+    color: white;
+    position: relative;
+}
+.dates-wrap:after {
+    top: -7px;
+    right: 28px;
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADkUlEQVR4Xu1ZS08TURQ+d0opbWdoteXhI2KIhSYkJISiCxb+B5fqRt0YY4y4MnFn4oqYKLoxMWEhiUt/AzsbBHVJaiHEQKoW6dBp6WPmXnMaxBY7audOMiNzZzeZe17f/b5zz8wQ8PhFPF4/CAAEAzyOgJCAxwkgmqCQgJCAxxEQEvA4AcQpICQgJGAzAplM5jQABBKJRNZO19lsNqHrenl0dHTTTr+2SiCTyQQopTlJksKGYZxNJpNbdiS7trY2ZBjGJwBQVVU9kUql6nb4RR+2ArC+vh7VdX0HHTPGJkZGRj7YkWg2m01RSpfQV61WU8bGxjQ7/NoCABsfD5dDgcuMsQQ7Hgvm5p7fRsfHZmdf9Xx8/9WORCuTUwM7MzNX0dfgrZtzZFetEgarIYO9JsvLZZ4YXAwoTU+chLpvkRE419j1cBhyL1428ok/uA/+jQ2e3A5s68PDkH/4qHE/eOMakGpl/xldBfBflNPpL1YDcQGgnZ9cAEKu/AzOfD749vQZ0J4g9N+7C9KuajWvFjsjGoX84ydANA36Z+4AUPrrOYV5eenddauB+ACYmsiB5BtoDs5CIUAgpGLRak5t7ajSC0SvA9nbawUH6OdIeuWM1WB8AFxIFQAgYjW4PXZ0W06vxK36EgBYRQ7tdqdSm0SCKI8PbltC8srbpSGrfvgYoGkukABsy7LskAQEAIIBQgKdHIOMMXxHAEmSTHuWruvQ1dXVSU/7f3pAqVQCSikoitK2QCxeVVWIxWJHFwBkgCzLpgAUCgWIxztq6u5kgGEYgDvefNVqtcZtd3d3WwDQBtcEg8GD5wgYMuYPsnEnAJh4tVptKbRSqTR6QHOBzQsQgHK5/JtEAoEAEGI6srgTgHZbjIzwjAQEAG0QEAzwkgSwoeGZfrjJYQ8wG3RwRsBZ4PApEYlEwOfzmc0G7myCWGi93vr1+l9OAU3TAAtuvsyOzf017gTArAn+bRI8MoNQOwBQFniZ0RlZgxLw+/1HcxTupKoO1joqAfzx0ddBsrYvpZRu9fb2nrLqmPeT2AIAHPwXsJoEp928LMvO/BcoFot9kiS9YYxNcxZh1XzRMIxLkUjku1UHXAzAoIwxomlakjHW0Uu81YSb7PKKoqwSQhiPL24AeIK7wVYA4IZdcDIHwQAn0XdDbMEAN+yCkzkIBjiJvhtiCwa4YReczEEwwEn03RBbMMANu+BkDp5nwA9F685QyFsfYQAAAABJRU5ErkJggg==");
+}
+.dates-list {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 23px;
+}
+.dates-list option {
+    text-align: center;
+}
+.time-list span {
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    width: 65px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    background: var(--button-color);
+    border-radius: 2px;
+}
+.time-list span.choice {
+    background: var(--selected-color);
+}
+.screen {
+    background-image: url('https://alternativemovieposters.com/wp-content/uploads/2015/06/juan_starwars700.jpg');
+    background-size: 225px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    height: 60px;
+    width: 220px;
+    margin: 15px auto;
+    transform-origin: 50%;
+    transform: perspective(300px) rotateX(-25deg);
+    box-shadow: 0 3px 10px rgb(250 183 151);
+}
+.seats-list {
+    position: relative;
+}
+.seats-list span {
+    display: inline-block;
+    position: relative;
+    background: var(--available-color);
+    height: 22px;
+    width: 25px;
+    margin: 3px 6px;
+    border-radius: 12px 12px 3px 3px;
+    border-bottom: 7px solid #3c7239;
+}
+.seats-list span:before {
+    content: '';
+    display: block;
+    background: var(--available-color);
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    top: 7px;
+    left: -4px;
+    border-radius: 3px;
+}
+.seats-list span:after {
+    content: '';
+    display: block;
+    background: var(--available-color);
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    top: 7px;
+    right: -4px;
+    border-radius: 3px;
+}
+.seats-list span[data-id='2'],
+.seats-list span[data-id='6'],
+.seats-list span[data-id='10'],
+.seats-list span[data-id='14'] {
+    margin-right: 16px;
+}
+.seats-list span[data-occupied='choice'] {
+    background: var(--selected-color);
+    cursor: pointer;
+}
+.seats-list span[data-occupied='true'] {
+    background: var(--occupied-color);
+    pointer-events: none;
+}
+.seats-list span[data-occupied='false']:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.seats-list.hidden span {
+    opacity: .4;
+    pointer-events: none;
+}
+.seats-info {
+    color: white;
+    margin: 6px 0 10px;
+}
+.seats-info span {
+    position: relative;
+    padding: 0 10px 0 15px;
+}
+.seats-info span:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+.seats-info span:nth-child(1):before {
+    background: var(--available-color);
+}
+.seats-info span:nth-child(2):before {
+    background: var(--selected-color);
+}
+.seats-info span:nth-child(3):before {
+    background: var(--occupied-color);
+}
+.reservation {
+    width: 100%;
+    display: block;
+    border: none;
+    background: var(--button-color);
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    padding: 10px 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.reservation[disabled] {
+    display: none;
+}
