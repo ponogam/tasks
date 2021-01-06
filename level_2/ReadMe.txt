@@ -8,3 +8,5 @@
 8. Apply for this task your creative skills for UX/UI, please.
 9. Upload result to the GIT and send me to email.
 10. Enjoy :)
+
+Demo: https://ponogam.github.io/tasks/level_2/booking-cinema-tickets/index.html
